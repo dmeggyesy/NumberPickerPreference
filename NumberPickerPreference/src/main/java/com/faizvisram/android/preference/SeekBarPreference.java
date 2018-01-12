@@ -113,7 +113,7 @@ public class SeekBarPreference extends Preference implements SeekBar.OnSeekBarCh
             mCurrentValue = (Integer) defaultValue;
             persistInt(mCurrentValue);
         }
-        Log.e("NumberPickerPreference", "mCurrentValue: " + mCurrentValue);
+        //Log.e("NumberPickerPreference", "mCurrentValue: " + mCurrentValue);
         setValue(mCurrentValue);
 
     }
