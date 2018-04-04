@@ -152,7 +152,7 @@ public class SeekBarPreference extends Preference implements SeekBar.OnSeekBarCh
      *
      * @param seekBar  The SeekBar whose progress has changed
      * @param progress The current progress level. This will be in the range 0..max where max
-     *                 was set by {@link ProgressBar#setMax(int)}. (The default value for max is 100.)
+     *                 was set by {@link SeekBar#setMax(int)} )}. (The default value for max is 100.)
      * @param fromUser True if the progress change was initiated by the user.
      */
     @Override
