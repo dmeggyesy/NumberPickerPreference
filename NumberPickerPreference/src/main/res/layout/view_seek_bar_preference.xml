@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Seek Bar Preference"
+        android:text="@string/preference_seek_bar"
         android:id="@+id/txt_title" />
 
     <SeekBar

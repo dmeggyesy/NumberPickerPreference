@@ -1,6 +1,7 @@
 package com.faizvisram.android.preference;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.preference.Preference;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -29,15 +30,15 @@ public class SeekBarPreference extends Preference implements SeekBar.OnSeekBarCh
     /**
      * Perform inflation from XML and apply a class-specific base style. This
      * constructor of Preference allows subclasses to use their own base
-     * style when they are inflating. For example, a {@link CheckBoxPreference}
+     * style when they are inflating. For example, a {@link android.preference.CheckBoxPreference}
      * constructor calls this version of the super class constructor and
      * supplies {@code android.R.attr.checkBoxPreferenceStyle} for <var>defStyle</var>.
      * This allows the theme's checkbox preference style to modify all of the base
-     * preference attributes as well as the {@link CheckBoxPreference} class's
+     * preference attributes as well as the {@link android.preference.CheckBoxPreference} class's
      * attributes.
      *
      * @param context  The Context this is associated with, through which it can
-     *                 access the current theme, resources, {@link SharedPreferences},
+     *                 access the current theme, resources, {@link android.content.SharedPreferences},
      *                 etc.
      * @param attrs    The attributes of the XML tag that is inflating the preference.
      * @param defStyle The default style to apply to this preference. If 0, no style
@@ -45,7 +46,6 @@ public class SeekBarPreference extends Preference implements SeekBar.OnSeekBarCh
      *                 may either be an attribute resource, whose value will be
      *                 retrieved from the current theme, or an explicit style
      *                 resource.
-     * @see #Preference(android.content.Context, android.util.AttributeSet)
      */
     public SeekBarPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -64,7 +64,6 @@ public class SeekBarPreference extends Preference implements SeekBar.OnSeekBarCh
      *                etc.
      * @param attrs   The attributes of the XML tag that is inflating the
      *                preference.
-     * @see #Preference(android.content.Context, android.util.AttributeSet, int)
      */
     public SeekBarPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -119,10 +118,11 @@ public class SeekBarPreference extends Preference implements SeekBar.OnSeekBarCh
     }
 
     protected View onCreateView(ViewGroup parent) {
+        super.onCreateView(parent);
         View view = ((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE))
                 .inflate(R.layout.view_seek_bar_preference, parent, false);
 
-        mSeekBar = (SeekBar) view.findViewById(R.id.seek_bar);
+        mSeekBar = view.findViewById(R.id.seek_bar);
         mSeekBar.setMax((mMax - mMin) / mStep + 1);
         mSeekBar.setOnSeekBarChangeListener(this);
         setValue(mCurrentValue);

@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">NumberPickerPreference</string>
+    <string name="app_name" translatable="false">NumberPickerPreference</string>
 
     <!-- picker dialog defaults -->
-    <string name="dialog_title_default">Choose a value</string>
-    <string name="dialog_save_button_text">Save</string>
+    <string name="dialog_title_default" translatable="false">Choose a value</string>
+    <string name="dialog_save_button_text" translatable="false">Save</string>
+    <string name="preference_seek_bar" translatable="false">Seek Bar Preference</string>
 </resources>
