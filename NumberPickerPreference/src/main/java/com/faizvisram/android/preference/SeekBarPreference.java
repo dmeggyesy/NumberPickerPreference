@@ -2,7 +2,8 @@ package com.faizvisram.android.preference;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.v7.preference.Preference;
+
+import android.preference.Preference;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.faizvisram.android.preference.numberpickerpreference.R;
 /**
  * Created by Faiz Visram on 2014-03-16.
  */
+@Deprecated
 public class SeekBarPreference extends Preference implements SeekBar.OnSeekBarChangeListener {
     private static final int DEFAULT_MAX = 100;
     private static final int DEFAULT_MIN = 0;
